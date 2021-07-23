@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+		http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		version="3.1">
+		 
+		<!-- insert payment --> 
+		<servlet>
+			<servlet-name>PaymentInsert</servlet-name>
+			<servlet-class>payment.PaymentInsertServlet</servlet-class> <!-- match the servlet -->
+		</servlet>
+		
+		<servlet-mapping> <!-- path to the servlet -->
+		 	<servlet-name>PaymentInsert</servlet-name>
+		 	<url-pattern>/pay</url-pattern> <!-- action to the payment insert form -->
+		 </servlet-mapping>
+		 
+		 <!-- view payment -->
+		 <servlet>
+			<servlet-name>PaymentView</servlet-name>
+			<servlet-class>payment.PaymentViewServlet</servlet-class> <!-- match the servlet -->
+		</servlet>
+		
+		<servlet-mapping> <!-- path to the servlet -->
+		 	<servlet-name>PaymentView</servlet-name>
+		 	<url-pattern>/view</url-pattern> <!-- action to the view form -->
+		 </servlet-mapping>
+		 
+		 <!-- update payment -->
+		 <servlet>
+			<servlet-name>updatepayment</servlet-name>
+			<servlet-class>payment.UpdatePaymentServlet</servlet-class> <!-- match the servlet -->
+		</servlet>
+
+		<servlet-mapping> <!-- path to the servlet -->
+			<servlet-name>updatepayment</servlet-name>
+			<url-pattern>/update</url-pattern> <!-- action to the update form -->
+		</servlet-mapping>
+		
+		<!-- delete payment -->
+		 <servlet>
+			<servlet-name>deletepayment</servlet-name>
+			<servlet-class>payment.PaymentDeleteServlet</servlet-class> <!-- match the servlet -->
+		</servlet>
+
+		<servlet-mapping> <!-- path to the servlet -->
+			<servlet-name>deletepayment</servlet-name>
+			<url-pattern>/delete</url-pattern> <!-- action to the delete form -->
+		</servlet-mapping>
+		
+		 <!-- go back to homepage -->
+		 <servlet>
+			<servlet-name>success</servlet-name>
+			<servlet-class>payment.AfterInsertServlet</servlet-class> <!-- match the servlet -->
+		</servlet>
+		
+		<servlet-mapping> <!-- path to the servlet -->
+		 	<servlet-name>success</servlet-name>
+		 	<url-pattern>/backtohome</url-pattern> <!-- action to the success form -->
+		 </servlet-mapping>
+		 
+		  <!-- go back to payment form -->
+		 <servlet>
+			<servlet-name>unsuccess</servlet-name>
+			<servlet-class>payment.InsertErrorServlet</servlet-class> <!-- match the servlet -->
+		</servlet>
+		
+		<servlet-mapping> <!-- path to the servlet -->
+		 	<servlet-name>unsuccess</servlet-name>
+		 	<url-pattern>/backtoinsert</url-pattern> <!-- action to the back to insert error form -->
+		 </servlet-mapping>
+		 
+		  <!-- go back to admin page -->
+		 <servlet>
+			<servlet-name>admin</servlet-name>
+			<servlet-class>payment.AdminConnectServlet</servlet-class> <!-- match the servlet -->
+		</servlet>
+		
+		<servlet-mapping> <!-- path to the servlet -->
+		 	<servlet-name>admin</servlet-name>
+		 	<url-pattern>/backtoadminhome</url-pattern> <!-- action to the admin view form -->
+		 </servlet-mapping>
+		
+</web-app>
